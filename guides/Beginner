@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Dark Souls III Guide - The Ashen Archive"
+    >
+
+    <title>Dark Souls III Guide | The Ashen Archive</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Guide-specific styling -->
+    <style>
+
+        /* =========================================
+           GUIDE PAGE
+        ========================================= */
+
+        .guide-hero {
+
+            padding: 120px 20px 100px;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(184, 92, 36, 0.12),
+                    transparent 50%
+                );
+
+            border-bottom:
+                1px solid var(--border);
+
+        }
+
+
+        .guide-hero h1 {
+
+            color: var(--white);
+
+            font-size:
+                clamp(2.8rem, 6vw, 5rem);
+
+            font-weight: normal;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .guide-subtitle {
+
+            max-width: 700px;
+
+            margin: 0 auto;
+
+            color: var(--text-muted);
+
+            font-size: 1.05rem;
+
+        }
+
+
+        /* =========================================
+           GUIDE LAYOUT
+        ========================================= */
+
+        .guide-layout {
+
+            width: min(1200px, 90%);
+
+            margin: 0 auto;
+
+            padding: 80px 0;
+
+            display: grid;
+
+            grid-template-columns:
+                250px 1fr;
+
+            gap: 60px;
+
+            align-items: start;
+
+        }
+
+
+        /* =========================================
+           GUIDE NAVIGATION
+        ========================================= */
+
+        .guide-sidebar {
+
+            position: sticky;
+
+            top: 105px;
+
+            background: var(--surface);
+
+            border:
+                1px solid var(--border);
+
+            padding: 25px;
+
+        }
+
+
+        .guide-sidebar h3 {
+
+            color: var(--yellow);
+
+            font-size: 0.8rem;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .guide-sidebar a {
+
+            display: block;
+
+            padding: 10px 0;
+
+            color: var(--text-muted);
+
+            border-bottom:
+                1px solid rgba(90, 88, 84, 0.25);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 0.75rem;
+
+            transition: color 0.3s ease;
+
+        }
+
+
+        .guide-sidebar a:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .guide-sidebar a:hover {
+
+            color: var(--yellow);
+
+        }
+
+
+        /* =========================================
+           GUIDE CONTENT
+        ========================================= */
+
+        .guide-content {
+
+            min-width: 0;
+
+        }
+
+
+        .guide-section {
+
+            margin-bottom: 80px;
+
+            scroll-margin-top: 110px;
+
+        }
+
+
+        .guide-section h2 {
+
+            color: var(--white);
+
+            font-size: 2rem;
+
+            font-weight: normal;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .guide-section h3 {
+
+            color: var(--yellow);
+
+            font-size: 1.35rem;
+
+            font-weight: normal;
+
+            margin-top: 35px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .guide-section p {
+
+            margin-bottom: 18px;
+
+            line-height: 1.9;
+
+        }
+
+
+        .guide-section ul,
+        .guide-section ol {
+
+            margin:
+
+                20px 0 25px 25px;
+
+            color: var(--text-muted);
+
+        }
+
+
+        .guide-section li {
+
+            margin-bottom: 10px;
+
+        }
+
+
+        /* =========================================
+           GUIDE DIVIDER
+        ========================================= */
+
+        .guide-divider {
+
+            width: 100%;
+
+            height: 1px;
+
+            margin: 30px 0;
+
+            background:
+                linear-gradient(
+                    to right,
+                    var(--border),
+                    transparent
+                );
+
+        }
+
+
+        /* =========================================
+           PLACEHOLDER
+        ========================================= */
+
+        .placeholder {
+
+            padding: 25px;
+
+            margin: 25px 0;
+
+            background:
+                rgba(201, 162, 39, 0.04);
+
+            border-left:
+                3px solid var(--yellow);
+
+            border-top:
+                1px solid rgba(201, 162, 39, 0.15);
+
+            border-right:
+                1px solid rgba(201, 162, 39, 0.15);
+
+            border-bottom:
+                1px solid rgba(201, 162, 39, 0.15);
+
+            color: var(--text-muted);
+
+            font-style: italic;
+
+        }
+
+
+        /* =========================================
+           TIP BOX
+        ========================================= */
+
+        .tip-box {
+
+            padding: 25px;
+
+            margin: 30px 0;
+
+            background:
+                rgba(61, 90, 115, 0.12);
+
+            border-left:
+                3px solid var(--blue);
+
+        }
+
+
+        .tip-box strong {
+
+            display: block;
+
+            color: var(--blue);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 0.7rem;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        /* =========================================
+           WARNING BOX
+        ========================================= */
+
+        .warning-box {
+
+            padding: 25px;
+
+            margin: 30px 0;
+
+            background:
+                rgba(143, 45, 45, 0.12);
+
+            border-left:
+                3px solid var(--red);
+
+        }
+
+
+        .warning-box strong {
+
+            display: block;
+
+            color: var(--red);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 0.7rem;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        /* =========================================
+           BONFIRE / IMPORTANT BOX
+        ========================================= */
+
+        .important-box {
+
+            padding: 25px;
+
+            margin: 30px 0;
+
+            background:
+                rgba(184, 92, 36, 0.10);
+
+            border-left:
+                3px solid var(--orange);
+
+        }
+
+
+        .important-box strong {
+
+            display: block;
+
+            color: var(--orange);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 0.7rem;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        /* =========================================
+           GUIDE TABLE
+        ========================================= */
+
+        .guide-table-wrapper {
+
+            overflow-x: auto;
+
+            margin: 30px 0;
+
+        }
+
+
+        .guide-table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            background: var(--surface);
+
+        }
+
+
+        .guide-table th {
+
+            padding: 15px;
+
+            text-align: left;
+
+            background: var(--surface-light);
+
+            color: var(--yellow);
+
+            border:
+                1px solid var(--border);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 0.7rem;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .guide-table td {
+
+            padding: 15px;
+
+            color: var(--text-muted);
+
+            border:
+                1px solid var(--border);
+
+        }
+
+
+        /* =========================================
+           GUIDE FOOTER
+        ========================================= */
+
+        .guide-end {
+
+            padding: 60px 20px;
+
+            text-align: center;
+
+            border-top:
+                1px solid var(--border);
+
+            background: #0B0B0B;
+
+        }
+
+
+        .guide-end h2 {
+
+            color: var(--yellow);
+
+            font-weight: normal;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 850px) {
+
+            .guide-layout {
+
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+
+            }
+
+
+            .guide-sidebar {
+
+                position: static;
+
+            }
+
+
+            .guide-sidebar nav {
+
+                display: grid;
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 0 20px;
+
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .guide-sidebar nav {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .guide-layout {
+
+                width: 92%;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <a href="../index.html" class="site-logo">
+
+                <span class="logo-mark">✦</span>
+
+                <span class="logo-text">
+                    The Ashen Archive
+                </span>
+
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a href="../index.html">
+                    Home
+                </a>
+
+                <a href="#overview">
+                    Overview
+                </a>
+
+                <a href="#walkthrough">
+                    Walkthrough
+                </a>
+
+                <a href="#reference">
+                    Reference
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         GUIDE HERO
+    ========================================== -->
+
+    <section class="guide-hero">
+
+        <p class="eyebrow">
+            THE ASHEN ARCHIVE
+        </p>
+
+        <h1>
+            Dark Souls III
+        </h1>
+
+        <div class="ornament">
+
+            <span></span>
+
+            ✦
+
+            <span></span>
+
+        </div>
+
+        <p class="guide-subtitle">
+
+            A comprehensive guide to the world, mechanics,
+            progression, secrets, and challenges of Lothric.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         GUIDE BODY
+    ========================================== -->
+
+    <div class="guide-layout">
+
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside class="guide-sidebar">
+
+            <h3>
+                Guide Contents
+            </h3>
+
+            <nav>
+
+                <a href="#overview">
+                    01 — Overview
+                </a>
+
+                <a href="#getting-started">
+                    02 — Getting Started
+                </a>
+
+                <a href="#walkthrough">
+                    03 — Walkthrough
+                </a>
+
+                <a href="#bosses">
+                    04 — Bosses
+                </a>
+
+                <a href="#equipment">
+                    05 — Equipment
+                </a>
+
+                <a href="#builds">
+                    06 — Builds
+                </a>
+
+                <a href="#secrets">
+                    07 — Secrets
+                </a>
+
+                <a href="#reference">
+                    08 — Reference
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+
+        <!-- =====================================
+             MAIN GUIDE CONTENT
+        ====================================== -->
+
+        <main class="guide-content">
+
+
+            <!-- =================================
+                 OVERVIEW
+            ================================== -->
+
+            <section
+                id="overview"
+                class="guide-section"
+            >
+
+                <p class="eyebrow">
+                    01 — OVERVIEW
+                </p>
+
+                <h2>
+                    Welcome to Dark Souls III
+                </h2>
+
+                <div class="guide-divider"></div>
+
+
+                <div class="placeholder">
+
+                    PLACEHOLDER
+
+                    <br><br>
+
+                    Begin writing your introduction to
+                    Dark Souls III here.
+
+                    Explain what this guide covers,
+                    who it is intended for, and anything
+                    else you want the reader to know
+                    before beginning.
+
+                </div>
+
+
+                <h3>
+                    What This Guide Covers
+                </h3>
+
+                <div class="placeholder">
+
+                    PLACEHOLDER
+
+                    <br><br>
+
+                    Add a summary of the major topics
+                    covered throughout your guide.
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 GETTING STARTED
+            ================================== -->
+
+            <section
+                id="getting-started"
+                class="guide-section"
+            >
+
+                <p class="eyebrow">
+                    02 — GETTING STARTED
+                </p>
+
+                <h2>
+                    Beginning Your Journey
+                </h2>
+
+                <div class="guide-divider"></div>
+
+
+                <div class="placeholder">
+
+                    PLACEHOLDER
+
+                    <br><br>
+
+                    Begin your beginner's guide here.
+
+                    Character creation, starting classes,
+                    early-game advice, controls, mechanics,
+                    and anything else you believe a new
+                    player should know.
+
+                </div>
+
+
+                <!-- TIP EXAMPLE -->
+
+                <div class="tip-box">
+
+                    <strong>
+                        Traveler's Tip
+                    </strong>
+
+                    <p>
+
+                        PLACEHOLDER — Add useful advice,
+                        recommendations, or tips here.
+
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 WALKTHROUGH
+            ================================== -->
+
+            <section
+                id="walkthrough"
+                class="guide-section"
+            >
+
+                <p class="eyebrow">
+                    03 — WALKTHROUGH
+                </p>
+
+                <h2>
+                    The Journey Through Lothric
+                </h2>
+
+                <div class="guide-divider"></div>
+
+
+                <div class="placeholder">
+
+                    PLACEHOLDER
+
+                    <br><br>
+
+                    This is where your main walkthrough
+                    begins.
+
+                    You can create individual subsections
+                    for every area.
+
+                </div>
+
+
+                <h3>
+                    Area One — PLACEHOLDER
+                </h3>
+
+                <div class="placeholder">
+
+                    PLACEHOLDER
+
+                    <br><br>
+
+                    Write the walkthrough for this area.
+
+                    Include enemies, items, NPCs,
+                    shortcuts, bonfires, secrets,
+                    important paths, and anything else
+                    the player should know.
+
+                </div>
+
+
+                <h3>
+                    Area Two — PLACEHOLDER
+                </h3>
+
+                <div class="placeholder">
+
+                    PLACEHOLDER
+
+                    <br><br>
+
+                    Continue the walkthrough here.
+
+                </div>
+
+
+                <div class="important-box">
+
+                    <strong>
+                        Important
+                    </strong>
+
+                    <p>
+
+                        PLACEHOLDER — Use this box for
+                        particularly important information
+                        that players should not overlook.
+
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 BOSSES
+            ================================== -->
+
+            <section
+                id="bosses"
+                class="guide-section"
+            >
+
+                <p class="eyebrow">
+                    04 — BOSSES
+                </p>
+
+                <h2>
+                    The Lords and Their Guardians
+                </h2>
+
+                <div class="guide-divider"></div>
+
+
+                <div class="placeholder">
+
+                    PLACEHOLDER
+
+                    <br><br>
+
+                    Introduce your boss section here.
+
+                    You can explain how your boss guides
+                    will be structured and what information
+                    players can expect.
+
+                </div>
+
+
+                <h3>
+                    Boss Name — PLACEHOLDER
+                </h3>
+
+                <div class="placeholder">
+
+                    PLACEHOLDER
+
+                    <br><br>
+
+                    Boss overview.
+
+                    <br><br>
+
+                    Add strategy, weaknesses, attacks,
+                    recommended equipment, phases,
+                    rewards, summons, and anything else
+                    relevant to the encounter.
+
+                </div>
+
+
+                <div class="warning-box">
+
+                    <strong>
+                        Warning
+                    </strong>
+
+                    <p>
+
+                        PLACEHOLDER — Put major warnings,
+                        missable content, quest consequences,
+                        or other potentially important
+                        information here.
+
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 EQUIPMENT
+            ================================== -->
+
+            <section
+                id="equipment"
+                class="guide-section"
+            >
+
+                <p class="eyebrow">
+                    05 — EQUIPMENT
+                </p>
+
+                <h2>
+                    Weapons, Armor & Items
+                </h2>
+
+                <div class="guide-divider"></div>
+
+
+                <div class="placeholder">
+
+                    PLACEHOLDER
+
+                    <br><br>
+
+                    Explain your equipment section here.
+
+                </div>
+
+
+                <h3>
+                    Weapons
+                </h3>
+
+                <div class="placeholder">
+
+                    PLACEHOLDER
+
+                    <br><br>
+
+                    Add weapon information here.
+
+                </div>
+
+
+                <h3>
+                    Armor
+                </h3>
+
+                <div class="placeholder">
+
+                    PLACEHOLDER
+
+                    <br><br>
+
+                    Add armor information here.
+
+                </div>
+
+
+                <h3>
+                    Rings & Items
+                </h3>
+
+                <div class="placeholder">
+
+                    PLACEHOLDER
+
+                    <br><br>
+
+                    Add rings, consumables, key items,
+                    and other equipment information here.
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 BUILDS
+            ================================== -->
+
+            <section
+                id="builds"
+                class="guide-section"
+            >
+
+                <p class="eyebrow">
+                    06 — BUILDS
+                </p>
+
+                <h2>
+                    Paths of Character Development
+                </h2>
+
+                <div class="guide-divider"></div>
+
+
+                <div class="placeholder">
+
+                    PLACEHOLDER
+
+                    <br><br>
+
+                    Introduce your build section.
+
+                    Explain stats, scaling, weapon choices,
+                    armor, rings, spells, and other factors
+                    you intend to cover.
+
+                </div>
+
+
+                <h3>
+                    Build Name — PLACEHOLDER
+                </h3>
+
+                <div class="placeholder">
+
+                    PLACEHOLDER
+
+                    <br><br>
+
+                    Describe the build here.
+
+                </div>
+
+
+                <!-- SAMPLE TABLE -->
+
+                <div class="guide-table-wrapper">
+
+                    <table class="guide-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Attribute
+                                </th>
+
+                                <th>
+                                    Recommended
+                                </th>
+
+                                <th>
+                                    Notes
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    Vigor
+                                </td>
+
+                                <td>
+                                    PLACEHOLDER
+                                </td>
+
+                                <td>
+                                    PLACEHOLDER
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Strength
+                                </td>
+
+                                <td>
+                                    PLACEHOLDER
+                                </td>
+
+                                <td>
+                                    PLACEHOLDER
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Dexterity
+                                </td>
+
+                                <td>
+                                    PLACEHOLDER
+                                </td>
+
+                                <td>
+                                    PLACEHOLDER
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 SECRETS
+            ================================== -->
+
+            <section
+                id="secrets"
+                class="guide-section"
+            >
+
+                <p class="eyebrow">
+                    07 — SECRETS
+                </p>
+
+                <h2>
+                    What Lies Beyond the Obvious
+                </h2>
+
+                <div class="guide-divider"></div>
+
+
+                <div class="placeholder">
+
+                    PLACEHOLDER
+
+                    <br><br>
+
+                    Hidden areas, obscure mechanics,
+                    secret items, NPC questlines,
+                    alternate endings, hidden paths,
+                    and anything else players may miss.
+
+                </div>
+
+
+                <h3>
+                    Secret — PLACEHOLDER
+                </h3>
+
+                <div class="placeholder">
+
+                    PLACEHOLDER
+
+                    <br><br>
+
+                    Explain the secret here.
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 REFERENCE
+            ================================== -->
+
+            <section
+                id="reference"
+                class="guide-section"
+            >
+
+                <p class="eyebrow">
+                    08 — REFERENCE
+                </p>
+
+                <h2>
+                    Quick Reference
+                </h2>
+
+                <div class="guide-divider"></div>
+
+
+                <div class="placeholder">
+
+                    PLACEHOLDER
+
+                    <br><br>
+
+                    Use this section for quick-reference
+                    information.
+
+                    Item locations, NPCs, shortcuts,
+                    achievements, trophies, checklists,
+                    mechanics, formulas, or anything else
+                    that benefits from being quickly accessible.
+
+                </div>
+
+
+                <div class="guide-table-wrapper">
+
+                    <table class="guide-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Topic
+                                </th>
+
+                                <th>
+                                    Information
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    PLACEHOLDER
+                                </td>
+
+                                <td>
+                                    PLACEHOLDER
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>
+                                    PLACEHOLDER
+                                </td>
+
+                                <td>
+                                    PLACEHOLDER
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>
+                                    PLACEHOLDER
+                                </td>
+
+                                <td>
+                                    PLACEHOLDER
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =========================================
+         END OF GUIDE
+    ========================================== -->
+
+    <section class="guide-end">
+
+        <p class="eyebrow">
+            END OF CURRENT RECORD
+        </p>
+
+        <h2>
+            The Journey Continues
+        </h2>
+
+        <p>
+            PLACEHOLDER — Add your closing message here.
+        </p>
+
+        <br>
+
+        <a
+            href="../index.html"
+            class="primary-button"
+        >
+            Return to the Archive
+        </a>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+
+                <span class="logo-mark">
+                    ✦
+                </span>
+
+                <div>
+
+                    <h3>
+                        The Ashen Archive
+                    </h3>
+
+                    <p>
+                        Knowledge for those who wander.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="../index.html">
+                    Home
+                </a>
+
+                <a href="#overview">
+                    Top
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 The Ashen Archive.
+            </p>
+
+            <p>
+                Built for those who seek.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
